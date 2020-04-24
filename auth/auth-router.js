@@ -1,8 +1,13 @@
+
 const router = require('express').Router();
 const bcrypt = require("bcryptjs");
 
 const TokenGen = require("../api/token-gen.js");
 const Users = require("./users-model.js");
+
+router.post("/test", (req, res) => {
+  res.status(200).json(req.body.name);
+});
 
 router.post('/register', (req, res) => {
   let user = req.body;
